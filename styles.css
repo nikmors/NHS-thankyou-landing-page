@@ -1,0 +1,494 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background: #FCF7F0;
+  overflow: hidden;
+}
+
+header{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    height: 10vh;
+}
+
+
+.presentation{
+    display: flex;
+    margin: auto;
+}
+
+/* You can't modify checkbox so hide it */
+
+#hamburger-checkbox {
+  display: none;
+}
+
+
+/* Use label instead */
+
+.hamburger {
+  font-size:  68px !important;
+  padding-top: 60px;
+  color: #70B1E8;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.close{
+  font-size:  68px !important;
+  text-align: right;
+  padding-top: 60px;
+  color: #70B1E8;
+  cursor: pointer;
+  position: relative;
+  left: 90%;
+}
+
+.nav-link:hover, #focused:hover{
+  color: rgb(180, 210, 255);
+  -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+/* Use :checked to indicate when it's checked */
+
+#hamburger-checkbox:checked ~ .nav {
+  transition: 1s ease;
+  transform: translateX(-250px);
+}
+
+/* color overlay */
+#hamburger-checkbox:checked~.color-overlay {
+  opacity: .58;
+ }
+
+ .color-overlay {
+  width: 100vw;
+  position: fixed;
+  height: 100vh;
+  background: #787777;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+/* color overlay */
+
+/*/////////////////---Navigation Menu---///////////////////////////////*/
+
+.nav {
+  width: 710px;
+  height: 100vh;
+  background: #005EB7;
+  transform: translateX(-1000px);
+  transition: 1s ease;
+  padding: 40px 10px;
+  z-index: 10;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.nav a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+}
+
+.nav-links{
+        justify-content: space-around;
+        list-style: none;
+        padding: 150px 0px 100px 0px;
+}
+
+.nav-link{
+        text-decoration: none;
+        color: white;
+        font-size: 50px; 
+        line-height: 80pt;
+        transition: .5s;
+        padding: 20px;
+        text-align: center;
+        box-sizing: border-box;
+        z-index: 10;
+}
+
+#focused{
+  color: white;
+  font-size: 90px; 
+  line-height: 260px;
+}
+/*/////////////////---Navigation Menu---///////////////////////////////*/
+
+/*////////////////////////-- SVGs --/////////////////////////////////*/
+.heart{
+  width: 272px;
+  height: 256px;
+  position: absolute;
+  left:216px;
+  top:174px;
+
+/*     -webkit-animation: heartbeat 1.5s 2 both;
+          animation: heartbeat 1.5s 2 both; */
+          
+  -webkit-animation: slide-in-left 3s linear both;
+        animation: slide-in-left 3s linear both;
+}
+
+.nhs{
+  width: 784px;
+  height: 257px;
+  position: absolute;
+  left:517px;
+  top:261px;
+  z-index: 1;
+
+  -webkit-animation: fade-in 3s ease-in both;
+        animation: fade-in 3s ease-in both;
+}
+
+.rainbow{
+  width: 1635px;
+  height: 1210px;
+  position: absolute;
+  left:772px;
+  top:183px;
+}
+
+.thankyou{
+  width: 618px;
+  height: 122px;
+  position: absolute;
+  left:340px;
+  top:672px;
+  z-index: 1;
+
+  -webkit-animation: slide-in-bottom 2.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-in-bottom 2.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/*////////////////////////-- SVGs --/////////////////////////////////*/
+
+
+/*////////////////////////-- Animations --/////////////////////////////////*/
+
+/**
+ * ----------------------------------------
+ * animation heartbeat
+ * ----------------------------------------
+ */
+ @-webkit-keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+            transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+            transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+
+
+/**
+* ----------------------------------------
+* animation slide-in-left heart
+* ----------------------------------------
+*/
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/**
+* ----------------------------------------
+* animation slide-in-bottom text
+* ----------------------------------------
+*/
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/**
+* ----------------------------------------
+* animation fade-in NHS
+* ----------------------------------------
+*/
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation tracking-in-contract menu links
+ * ----------------------------------------
+ */
+ @-webkit-keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+
+/*/////////////////////////  Responsiveness  ////////////////////////////////////*/
+/* for phones*/
+/* not @media screen and (max-width: 1024px){ */
+  @media (min-width: 481px) and (max-width: 767px){
+    .presentation{
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .hamburger {
+      font-size:  34px !important;
+    }
+    
+    .close{
+      font-size:  34px !important;
+      left: 85%;
+    }
+
+    /*////////////////////////-- SVGs --/////////////////////////////////*/
+  .heart{
+    width: 85px;
+    height: 165px;
+    position: absolute;
+    left:116px;
+    top:104px;
+  }
+
+  .nhs{
+    width: 322px;
+    height: 170px;
+    position: absolute;
+    left:100px;
+    top:261px;
+
+  }
+
+  .rainbow{
+    width: 817px;
+    height: 605px;
+    position: absolute;
+    left:172px;
+    top:183px;
+  }
+
+  .thankyou{
+    width: 206px;
+    height: 40px;
+    position: absolute;
+    left:20px;
+    top:452px;
+  }
+
+/*////////////////////////-- SVGs --/////////////////////////////////*/
+
+/*/////////////////---Navigation Menu---///////////////////////////////*/
+
+.nav-link{
+  font-size: 25px; 
+  line-height: 40pt;
+}
+
+#focused{
+  font-size: 45px; 
+  line-height: 130px;
+}
+#hamburger-checkbox:checked ~ .nav {
+  transition: 1s ease;
+  transform: translateX(-150px);
+}
+/*/////////////////---Navigation Menu---///////////////////////////////*/
+  }
+
+  /* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /*////////////////////////-- SVGs --/////////////////////////////////*/
+.heart{
+  width: 185px;
+  height: 265px;
+  left:116px;
+  top:74px;
+}
+
+.nhs{
+  width: 622px;
+  height: 270px;
+  left:160px;
+
+}
+
+.rainbow{
+  left:272px;
+  top:183px;
+}
+
+.thankyou{
+  width: 309px;
+  height: 61px;
+  position: absolute;
+  left:170px;
+  top:572px;
+}
+
+/*////////////////////////-- SVGs --/////////////////////////////////*/
+
+/*/////////////////---Navigation Menu---///////////////////////////////*/
+
+.nav-link{
+font-size: 25px; 
+line-height: 40pt;
+}
+
+#focused{
+font-size: 45px; 
+line-height: 130px;
+}
+#hamburger-checkbox:checked ~ .nav {
+transition: 1s ease;
+transform: translateX(-200px);
+}
+/*/////////////////---Navigation Menu---///////////////////////////////*/
+  
+}
